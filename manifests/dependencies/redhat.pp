@@ -11,7 +11,4 @@ class pyenv::dependencies::redhat {
   if ! defined(Package['libxslt-devel'])          { package { 'libxslt-devel':          ensure => installed } }
   if ! defined(Package['git'])                    { package { 'git':                    ensure => installed } }
   if ! defined(Package['curl'])                   { package { 'curl':                   ensure => installed } }
-  if ! defined(Package['mysql-libs'])             { package { 'mysql-libs':             ensure => installed } }
-  if ! defined(Package['sqlite'])                 { package { 'sqlite':                 ensure => installed } }
-  if ! defined(Package['sqlite-devel'])           { package { 'sqlite-devel':           ensure => installed } }
 }
