@@ -40,7 +40,7 @@ define pyenv::install(
     command => "echo 'eval \"$(pyenv virtualenv-init -)\"' >> ${shrc}",
     user    => $user,
     group   => $group,
-    unless  => "grep -q \"virtualenv init\" ${shrc}",
+    unless  => "grep -q \"virtualenv-init\" ${shrc}",
     path    => ['/bin', '/usr/bin', '/usr/sbin'],
     require => Exec["pyenv::checkout virtualenv ${user}"],
   }
