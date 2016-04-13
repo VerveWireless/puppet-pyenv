@@ -42,7 +42,7 @@ define pyenv::install(
     group   => $group,
     unless  => "grep -q \"virtualenv-init\" ${shrc}",
     path    => ['/bin', '/usr/bin', '/usr/sbin'],
-    require => Exec["pyenv::checkout virtualenv ${user}"],
+    require => [Exec["pyenv::checkout virtualenv ${user}"],Exec["pyenv::shrc ${user}"]],
   }
 
   file { "pyenv::pyenvrc ${user}":
